@@ -1,0 +1,41 @@
+name: Build & Smoke-Test Native Ghost PowerShell Launcher
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Zig 0.14.1
+        uses: mlugg/setup-zig@v2
+        with:
+          version: 0.14.1
+
+      - name: Cross-compile 4-OS + WASI C11 launchers (0 warnings)
+        run: |
+          mkdir -p dist
+          zig cc -target x86_64-windows-gnu -std=c11 -O2 -s -Wall -Wextra src/pwsh_launcher.c -o dist/pwsh.exe
+          zig cc -target x86_64-linux-musl -static -std=c11 -O2 -s -Wall -Wextra src/pwsh_launcher.c -o dist/pwsh-linux-x64
+          zig cc -target aarch64-linux-musl -static -std=c11 -O2 -s -Wall -Wextra src/pwsh_launcher.c -o dist/pwsh-linux-arm64
+          zig cc -target aarch64-macos -std=c11 -O2 -Wall -Wextra src/pwsh_launcher.c -o dist/pwsh-macos-arm64
+          zig cc -target wasm32-wasi -std=c11 -Os -s -Wall -Wextra src/pwsh_launcher.c -o dist/pwsh.wasm
+          ls -lh dist/
+
+      - name: Smoke-test Linux x64 binary
+        run: |
+          chmod +x ./dist/pwsh-linux-x64
+          ./dist/pwsh-linux-x64 --ghost-version
+          ./dist/pwsh-linux-x64 --ghost-info
+          ./dist/pwsh-linux-x64 --ghost-help

@@ -1,0 +1,22 @@
+{
+  "name": "@awesome-os/powershell",
+  "version": "0.1.0",
+  "description": "Zero-cmd.exe native 4-OS + WASI C11 PowerShell launcher hydrating rolling-latest PowerShell from awesome-os/b8g-ghost cas-v1 (Keep-Last-5, passes GetCommandLineW verbatim with zero %* mangling)",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesome-os/powershell.git"
+  },
+  "awesomeOs": {
+    "casRegistry": "https://raw.githubusercontent.com/awesome-os/b8g-ghost/main/manifests/index.json",
+    "casRelease": "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1",
+    "retention": "keep-last-5",
+    "keys": {
+      "win64": "pwsh-win64.tar.zst",
+      "linux-x64": "pwsh-linux-x64.tar.zst",
+      "linux-arm64": "pwsh-linux-arm64.tar.zst",
+      "macos-arm64": "pwsh-macos-arm64.tar.zst"
+    }
+  }
+}

@@ -42,7 +42,7 @@
   #define PWSH_REL_BIN "pwsh"
 #endif
 
-#define GHOST_PWSH_LAUNCHER_VERSION "0.1.0"
+#define GHOST_PWSH_LAUNCHER_VERSION "0.2.0"
 #define INDEX_URL "https://raw.githubusercontent.com/awesome-os/b8g-ghost/main/manifests/index.json"
 #define BLOB_BASE_URL "https://github.com/awesome-os/b8g-ghost/releases/download/cas-v1"
 #define MAX_PATH_BUF 1024

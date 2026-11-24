@@ -1,9 +1,12 @@
 {
   "name": "@awesome-os/powershell",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Zero-cmd.exe native 4-OS + WASI C11 PowerShell launcher hydrating rolling-latest PowerShell from awesome-os/b8g-ghost cas-v1 (Keep-Last-5, passes GetCommandLineW verbatim with zero %* mangling)",
   "type": "module",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/awesome-os/powershell.git"

@@ -2,6 +2,40 @@
 
 Drop-in native C11 `pwsh.exe` / `pwsh` / `pwsh.wasm` launcher (~25 KB, zero `cmd.exe`, zero `.bat`/`.cmd` shims, zero `%*` pipe/redirect mangling) that hydrates rolling-latest PowerShell **once** from [`awesome-os/b8g-ghost`](https://github.com/awesome-os/b8g-ghost) (`cas-v1`, Keep-Last-5) into `~/.b8g/cas/pwsh/<sha256>/`.
 
+## Quick Install & Usage
+
+### Windows (PowerShell 1-liner)
+
+```powershell
+irm https://github.com/awesome-os/powershell/releases/latest/download/install.ps1 | iex
+```
+
+### Linux (x64 / ARM64) & macOS (Apple Silicon)
+
+```sh
+curl -fsSL https://github.com/awesome-os/powershell/releases/latest/download/install.sh | sh
+```
+
+### CLI Usage
+
+```powershell
+# Inspect installed PowerShell version & help
+pwsh --version
+pwsh --help
+
+# Run a PowerShell script or inline command
+pwsh -NoProfile -File ./script.ps1
+pwsh -NoProfile -Command "1..5 | Where-Object { $_ -gt 2 } | Measure-Object -Sum"
+
+# Optional: store hydrated CAS layers on a custom drive/path
+$env:B8G_GHOST_CACHE_DIR = "D:\b8g-cas"   # POSIX: export B8G_GHOST_CACHE_DIR=/data/b8g-cas
+pwsh --ghost-info
+```
+
+### Releases & Verification
+
+- **Latest Release:** [`awesome-os/powershell` Releases](https://github.com/awesome-os/powershell/releases/latest) — includes `SHA256SUMS.txt` and the 5-OS matrix (`win64`, `linux-x64`, `linux-arm64`, `macos-arm64`, `wasm32-wasi`) built via [`awesome-os/maintenance-workflows`](https://github.com/awesome-os/maintenance-workflows).
+
 ## Why Native C11 + `GetCommandLineW()`?
 
 Batch wrappers (`.cmd` / `.bat`) route through `cmd.exe` and mangle `|`, `&`, `<`, `>`, `^`, and quoted PowerShell scriptblocks via `%*` expansion.

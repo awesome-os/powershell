@@ -1,0 +1,20 @@
+name: Release 5-OS Matrix (Maintenance Workflows)
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
+        default: 'v0.2.0'
+permissions:
+  contents: write
+jobs:
+  release:
+    uses: awesome-os/maintenance-workflows/.github/workflows/reusable-5os-release.yml@main
+    with:
+      binary_name: powershell
+      c_source: src/pwsh_launcher.c
+      win_ldflags: ''
+      tag: ${{ inputs.tag || '' }}

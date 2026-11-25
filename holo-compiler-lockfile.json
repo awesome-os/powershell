@@ -1,0 +1,76 @@
+{
+  "schema": "holo-compiler-lockfile-v1",
+  "abiMagic": "0x33564742",
+  "casLayout": "v11",
+  "repo": "awesome-os/powershell",
+  "targets": [
+    "linux-arm64",
+    "linux-x64",
+    "macos-arm64",
+    "wasm32-wasi",
+    "win64"
+  ],
+  "generatedAt": "2026-11-24T23:53:02.473Z",
+  "dependencies": [
+    {
+      "id": "awesome-os/powershell/pwsh-linux-arm64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "linux-arm64",
+      "sha512": "f6dd534bb388fe71e482532c4ebb89279b01c99c29e8794f067f63d5daf79640a6eb4072f94ced2e1c8205e92c34a3453ba23b7fa9004e1003316c5edbde354d",
+      "size": 45408,
+      "executable": true,
+      "blob": "v11/files/f6/f6dd534bb388fe71e482532c4ebb89279b01c99c29e8794f067f63d5daf79640a6eb4072f94ced2e1c8205e92c34a3453ba23b7fa9004e1003316c5edbde354d-exec",
+      "url": "https://github.com/awesome-os/powershell/releases/download/v0.1.0/pwsh-linux-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/powershell/pwsh-linux-x64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "linux-x64",
+      "sha512": "474e97286d717046df22836693e79fbe4200fdd82daa5b754fae15cdac3c579ffc315a83fa8ccb59289a881bf50d609c5adbd528806e1a8af2ca1eaec751f8b7",
+      "size": 37584,
+      "executable": true,
+      "blob": "v11/files/47/474e97286d717046df22836693e79fbe4200fdd82daa5b754fae15cdac3c579ffc315a83fa8ccb59289a881bf50d609c5adbd528806e1a8af2ca1eaec751f8b7-exec",
+      "url": "https://github.com/awesome-os/powershell/releases/download/v0.1.0/pwsh-linux-x64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/powershell/pwsh-macos-arm64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "macos-arm64",
+      "sha512": "342c6dad8c05b082f8b35157f631ea6b5a9c367cb2280a36fef62016275835ea73acb9048578726b49c0650f3acfe32b5ccb120b565404f3265c9f3c7a0b9b60",
+      "size": 52192,
+      "executable": true,
+      "blob": "v11/files/34/342c6dad8c05b082f8b35157f631ea6b5a9c367cb2280a36fef62016275835ea73acb9048578726b49c0650f3acfe32b5ccb120b565404f3265c9f3c7a0b9b60-exec",
+      "url": "https://github.com/awesome-os/powershell/releases/download/v0.1.0/pwsh-macos-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/powershell/pwsh.exe",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "win64",
+      "sha512": "85b6a8ffb28d1407534054ed1f03158c1c14211710df3fa82fec0154cd6379850cb8e2daae89540047da2b6ebe6aa1bd98dc1e3ffb11f2732accc0c59a1e5d23",
+      "size": 25600,
+      "executable": true,
+      "blob": "v11/files/85/85b6a8ffb28d1407534054ed1f03158c1c14211710df3fa82fec0154cd6379850cb8e2daae89540047da2b6ebe6aa1bd98dc1e3ffb11f2732accc0c59a1e5d23-exec",
+      "url": "https://github.com/awesome-os/powershell/releases/download/v0.1.0/pwsh.exe",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/powershell/pwsh.wasm",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "wasm32-wasi",
+      "sha512": "8e3443b4d0556d6ab4bb98c9e76d6742890b406081b89fa2974e3ef3a671016b41efccf97a013451546afd70a71de146dd1a9639a9f85f959820c6ff2e8536f6",
+      "size": 36683,
+      "executable": true,
+      "blob": "v11/files/8e/8e3443b4d0556d6ab4bb98c9e76d6742890b406081b89fa2974e3ef3a671016b41efccf97a013451546afd70a71de146dd1a9639a9f85f959820c6ff2e8536f6-exec",
+      "url": "https://github.com/awesome-os/powershell/releases/download/v0.1.0/pwsh.wasm",
+      "dependencies": []
+    }
+  ]
+}

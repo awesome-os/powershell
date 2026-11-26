@@ -1,3 +1,6 @@
+> [!NOTE]
+> Consolidated into the unified Holo v11 monorepo at https://github.com/awesome-os/awesome-os (all existing v11 CAS release assets remain downloadable).
+
 # `@awesome-os/powershell` - Native Zero-`cmd.exe` Ghost PowerShell Launcher
 
 Drop-in native C11 `pwsh.exe` / `pwsh` / `pwsh.wasm` launcher (~25 KB, zero `cmd.exe`, zero `.bat`/`.cmd` shims, zero `%*` pipe/redirect mangling) that hydrates rolling-latest PowerShell **once** from [`awesome-os/b8g-ghost`](https://github.com/awesome-os/b8g-ghost) (`cas-v1`, Keep-Last-5) into `~/.b8g/cas/pwsh/<sha256>/`.
